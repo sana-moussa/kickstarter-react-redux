@@ -1,8 +1,8 @@
 {
-  "name": "test-react-redux",
+  "name": "kickstarter-react-redux",
   "version": "0.1.0",
-  "description": "sample basic setup for react + redux",
-  "main": "index.js",
+  "description": "basic setup for react + redux project",
+  "main": "main.js",
   "directories": {
     "test": "tests"
   },
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:sana-moussa/sample-react-redux.git"
+    "url": "git+ssh://git@github.com:sana-moussa/kickstarter-react-redux.git"
   },
   "keywords": [
     "react"
   ],
   "author": "nz@delodi.net",
   "license": "ISC",
-  "homepage": "https://github.com/sana-moussa/sample-react-redux",
+  "homepage": "https://github.com/sana-moussa/kickstarter-react-redux",
   "dependencies": {
     "babel-eslint": "^8.2.2",
     "babel-loader": "^7.1.2",

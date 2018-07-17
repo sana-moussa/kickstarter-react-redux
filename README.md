@@ -21,3 +21,11 @@
             |- config
             |- translations
             |- store
+
+### Get started
+
+- first you have to clone the repo
+- then install the modules by running:
+  `npm install`
+
+- finally run it from app/ folder location: `npm start`
