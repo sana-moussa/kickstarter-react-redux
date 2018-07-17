@@ -7,7 +7,7 @@ import { PersistGate } from "redux-persist/integration/react";
 
 import { store, persistor } from "./store";
 import "bootstrap/dist/css/bootstrap.css";
-import Alert from "./components/alert";
+import AlertTemplate from "./components/alert";
 
 require("../sass/main.scss");
 
@@ -23,7 +23,7 @@ const options = {
 render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <AlertProvider template={Alert} {...options}>
+      <AlertProvider template={AlertTemplate} {...options}>
         <App />
       </AlertProvider>
     </PersistGate>

@@ -1,7 +1,7 @@
 import React from "react";
-import { Alert as AlertTemplate } from "reactstrap";
+import { Alert as AlertStrap } from "reactstrap";
 
-class Alert extends React.Component {
+class AlertTemplate extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -9,11 +9,11 @@ class Alert extends React.Component {
   render() {
     const { options, message, close } = this.props;
     return (
-      <AlertTemplate color={options.type} toggle={close}>
+      <AlertStrap color={options.type} toggle={close}>
         {message}
-      </AlertTemplate>
+      </AlertStrap>
     );
   }
 }
 
-export default Alert;
+export default AlertTemplate;
