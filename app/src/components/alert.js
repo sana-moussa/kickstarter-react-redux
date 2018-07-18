@@ -1,17 +1,31 @@
 import React from "react";
-import { Alert as AlertStrap } from "reactstrap";
 
 class AlertTemplate extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    const { options, message, close } = this.props;
+    const { alert, dismiss } = this.props;
+
     return (
-      <AlertStrap color={options.type} toggle={close}>
-        {message}
-      </AlertStrap>
+      <div
+        className={"alert alert-dismissible alert-" + alert.options.type}
+        role="alert"
+        key={alert.id}
+      >
+        <button
+          type="button"
+          className="close"
+          aria-label="Close"
+          onClick={dismiss(alert)}
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+        <div>
+          {alert.message}
+          {alert.options.parameters &&
+            alert.options.parameters.map((param, index) => {
+              return <span key={index}>{param}</span>;
+            })}
+        </div>
+      </div>
     );
   }
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import {
   Col,
   Button,
@@ -8,8 +10,16 @@ import {
   Input,
   FormText
 } from "reactstrap";
+import { showAlert } from "../actions/alert";
+import { ALERT_TYPES } from "../config";
 
 class Contact extends React.Component {
+  onSubmit() {
+    this.props.showAlert("Error! this feature is obsolete", {
+      type: ALERT_TYPES.ERROR
+    });
+  }
+
   render() {
     return (
       <div className="margin-wrap padding-wrap">
@@ -118,7 +128,7 @@ class Contact extends React.Component {
           </FormGroup>
           <FormGroup check row>
             <Col sm={{ size: 10, offset: 2 }}>
-              <Button>Submit</Button>
+              <Button onClick={this.onSubmit.bind(this)}>Submit</Button>
             </Col>
           </FormGroup>
         </Form>
@@ -127,4 +137,16 @@ class Contact extends React.Component {
   }
 }
 
-export default Contact;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      showAlert
+    },
+    dispatch
+  );
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Contact);
