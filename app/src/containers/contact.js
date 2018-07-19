@@ -16,7 +16,8 @@ import { ALERT_TYPES } from "../config";
 class Contact extends React.Component {
   onSubmit() {
     this.props.showAlert("Error! this feature is obsolete", {
-      type: ALERT_TYPES.ERROR
+      type: ALERT_TYPES.ERROR,
+      timeout: 500
     });
   }
 

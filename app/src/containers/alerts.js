@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { Row, Col } from "reactstrap";
 import AlertTemplate from "../components/alert";
 import { dismissAlert } from "../actions/alert";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 class Alerts extends React.Component {
   onDismiss(alert) {
@@ -18,16 +19,29 @@ class Alerts extends React.Component {
         <div className="v-margin">
           <Row className="justify-content-end">
             <Col className="col-6">
-              {alerts.length > 0 &&
-                alerts.map(alert => {
-                  return (
-                    <AlertTemplate
-                      alert={alert}
-                      key={alert.id}
-                      dismiss={alert => this.onDismiss.bind(this, alert)}
-                    />
-                  );
-                })}
+              <TransitionGroup enter exit>
+                {alerts.length > 0 &&
+                  alerts.map((alert, index) => {
+                    return (
+                      <CSSTransition
+                        unmountOnExit
+                        timeout={{ enter: alert.options.timeout, exit: 0 }}
+                        classNames="fade"
+                        key={index}
+                        onEntered={node => {
+                          if (node.firstChild)
+                            node.removeChild(node.firstChild);
+                        }}
+                      >
+                        <AlertTemplate
+                          alert={alert}
+                          key={alert.id}
+                          dismiss={alert => this.onDismiss.bind(this, alert)}
+                        />
+                      </CSSTransition>
+                    );
+                  })}
+              </TransitionGroup>
             </Col>
           </Row>
         </div>
