@@ -28,9 +28,8 @@ class Alerts extends React.Component {
                         timeout={{ enter: alert.options.timeout, exit: 0 }}
                         classNames="fade"
                         key={index}
-                        onEntered={node => {
-                          if (node.firstChild)
-                            node.removeChild(node.firstChild);
+                        onEntered={() => {
+                          this.props.dismissAlert(alert.id);
                         }}
                       >
                         <AlertTemplate
