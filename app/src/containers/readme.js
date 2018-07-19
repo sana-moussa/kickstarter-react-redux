@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux";
 import { Row, Col } from "reactstrap";
 import { showAlert } from "../actions/alert";
 import { ALERT_TYPES } from "../config";
-import ReadmeCard from "../components/readmeCard";
+import ReadmeCard from "../components/readme_card";
 
 class Readme extends React.Component {
   onButtonClick(message, options) {

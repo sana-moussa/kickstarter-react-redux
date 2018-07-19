@@ -51,9 +51,13 @@ class Header extends React.Component {
                   Account
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>Login</DropdownItem>
+                  <NavLink to={ROUTES.LOGIN} className="dropdown-item">
+                    Login
+                  </NavLink>
                   <DropdownItem divider />
-                  <DropdownItem>Registration</DropdownItem>
+                  <NavLink to={ROUTES.REGISTRATION} className="dropdown-item">
+                    Registration
+                  </NavLink>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
