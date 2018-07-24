@@ -17,8 +17,8 @@ class Readme extends React.Component {
 
   render() {
     return (
-      <div className="padding-wrap margin-wrap">
-        <Row className="v-margin">
+      <div className="padding-wrap">
+        <Row className="margin-vertical-wrap">
           <Col sm="6">
             <ReadmeCard
               cardTitle="About React"
@@ -51,7 +51,7 @@ class Readme extends React.Component {
             />
           </Col>
         </Row>
-        <Row className="v-margin">
+        <Row className="margin-vertical-wrap">
           <Col sm="6">
             <ReadmeCard
               cardTitle="Alerts"

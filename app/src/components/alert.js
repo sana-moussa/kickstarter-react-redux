@@ -5,27 +5,25 @@ class AlertTemplate extends React.Component {
     const { alert, dismiss } = this.props;
 
     return (
-      <div>
-        <div
-          className={`alert alert-dismissible alert-${alert.options.type}`}
-          role="alert"
-          key={alert.id}
+      <div
+        className={`alert alert-dismissible alert-${alert.options.type}`}
+        role="alert"
+        key={alert.id}
+      >
+        <button
+          type="button"
+          className="close"
+          aria-label="Close"
+          onClick={dismiss(alert)}
         >
-          <button
-            type="button"
-            className="close"
-            aria-label="Close"
-            onClick={dismiss(alert)}
-          >
-            <span aria-hidden="true">×</span>
-          </button>
-          <div>
-            {alert.message}
-            {alert.options.parameters &&
-              alert.options.parameters.map((param, index) => {
-                return <span key={index}>{param}</span>;
-              })}
-          </div>
+          <span aria-hidden="true">×</span>
+        </button>
+        <div>
+          {alert.message}
+          {alert.options.parameters &&
+            alert.options.parameters.map((param, index) => {
+              return <span key={index}>{param}</span>;
+            })}
         </div>
       </div>
     );

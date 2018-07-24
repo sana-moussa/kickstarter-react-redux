@@ -5,6 +5,7 @@
  * fault values here.
  */
 const DEFAULT_CONFIG = {
+  API_URL: "https://private-932b97-testauthflow.apiary-mock.com", //tmp
   DEFAULT_LOCALE: "en"
 };
 

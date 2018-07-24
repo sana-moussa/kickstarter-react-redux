@@ -1,6 +1,7 @@
 import { applyMiddleware, createStore, compose } from "redux";
 import ReduxPromise from "redux-promise";
 import ReduxThunk from "redux-thunk";
+import axiosMiddleware from "redux-axios-middleware";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import {
@@ -10,6 +11,7 @@ import {
 } from "react-redux-i18n";
 
 import rootReducer from "../reducers";
+import { globalOptions, client } from "../config/requests";
 import CONFIG from "../config/config";
 import translationsObject from "../translations";
 
@@ -26,7 +28,13 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = createStore(
   persistedReducer,
-  composeEnhancers(applyMiddleware(ReduxPromise, ReduxThunk))
+  composeEnhancers(
+    applyMiddleware(
+      ReduxPromise,
+      ReduxThunk,
+      axiosMiddleware(client, globalOptions)
+    )
+  )
 );
 
 const persistor = persistStore(store);

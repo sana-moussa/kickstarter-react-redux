@@ -1,12 +1,12 @@
-.margin-wrap {
-  margin: 2rem 4rem;
-}
-
 .padding-wrap {
   padding: 4rem 2rem;
 }
 
-.v-margin {
+.margin-vertical-wrap {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.content {
+  position: relative;
 }

@@ -15,8 +15,8 @@ class Alerts extends React.Component {
     const { alerts } = this.props;
 
     return (
-      <div className="react-alerts-overlay-component-container">
-        <div className="v-margin">
+      <div className="alerts-overlay-container">
+        <div className="margin-vertical-wrap">
           <Row className="justify-content-end">
             <Col className="col-6">
               <TransitionGroup enter exit>

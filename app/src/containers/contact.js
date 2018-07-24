@@ -23,8 +23,11 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div className="margin-wrap padding-wrap">
+      <div className="padding-wrap">
         <Form>
+          <legend>
+            <h4>This is form example</h4>
+          </legend>
           <FormGroup row>
             <Label for="exampleEmail" sm={2}>
               Email

@@ -3,6 +3,7 @@ const ROUTES = {
   LOGIN: "/login",
   REGISTRATION: "/registration",
   RESET_PASSWORD: "/reset-password",
+  LOGOUT: "/logout",
   README: "/readme",
   CONTACT: "/contact",
   ACCOUNT: "/account"

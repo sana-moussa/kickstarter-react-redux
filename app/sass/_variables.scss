@@ -1,2 +1,16 @@
 // configuring bootstrap:
 $bootstrap-sass-asset-helper: true;
+
+// font path for font awesome:
+$fa-font-path: "~font-awesome/fonts";
+
+// basic tool colors
+$brand-primary: #9696cc;
+
+$black: #000;
+$gray-darker: #2f2f2f;
+$gray-dark: #404040;
+$gray: #535a5a;
+$gray-light: #b8c1c1;
+$gray-lighter: #f4f4f4;
+$white: #fff;

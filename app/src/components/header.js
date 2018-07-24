@@ -1,18 +1,9 @@
 import React from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "reactstrap";
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from "reactstrap";
 import ROUTES from "../config/app_routes";
-import { NavLink } from "react-router-dom";
+import AuthenticatedComponent from "./authenticated_component";
+import AuthenticatedHeader from "../containers/auth_header";
+import PublicHeader from "./public_header";
 
 class Header extends React.Component {
   constructor(props) {
@@ -36,30 +27,10 @@ class Header extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink to={ROUTES.README} className="nav-link">
-                  ReadMe
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to={ROUTES.CONTACT} className="nav-link">
-                  Contact
-                </NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Account
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <NavLink to={ROUTES.LOGIN} className="dropdown-item">
-                    Login
-                  </NavLink>
-                  <DropdownItem divider />
-                  <NavLink to={ROUTES.REGISTRATION} className="dropdown-item">
-                    Registration
-                  </NavLink>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <AuthenticatedComponent
+                component={AuthenticatedHeader}
+                publicComponent={PublicHeader}
+              />
             </Nav>
           </Collapse>
         </Navbar>

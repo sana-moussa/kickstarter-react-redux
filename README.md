@@ -14,8 +14,8 @@
         src
             |-main.js <!-- main level -->
             |- actions
-            |- components <!-- contains app.js as top level component -->
-            |- containers
+            |- components
+            |- containers <!-- contains app.js as top level container -->
             |- reducers
 
             |- config
@@ -29,3 +29,7 @@
   `npm install`
 
 - finally run it from app/ folder location: `npm start`
+
+### Credits
+
+I would like to thank Christoph Grabenstein for being with a grate help in making up this code.

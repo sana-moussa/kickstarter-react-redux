@@ -6,11 +6,12 @@ import { connect } from "react-redux";
 
 import Header from "../components/header";
 import Home from "./home";
-import Contact from "./contact";
-import Readme from "./readme";
+// import Contact from "./contact";
+// import Readme from "./readme";
 import Alerts from "./alerts";
 import Authentication from "./authentication";
 import Registration from "./registration";
+import AuthenticatedRoutes from "../components/authenticated_routes";
 
 class App extends React.Component {
   render() {
@@ -20,17 +21,15 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="container">
           <Header />
-
           <div className="content">
-            <div>
-              <Alerts alerts={alerts} />
-            </div>
+            <Alerts alerts={alerts} />
             <Switch>
               <Route path={ROUTES.LOGIN} component={Authentication} />
               <Route path={ROUTES.REGISTRATION} component={Registration} />
               <Route exact path={ROUTES.HOME} component={Home} />
-              <Route path={ROUTES.CONTACT} component={Contact} />
-              <Route path={ROUTES.README} component={Readme} />
+              <AuthenticatedRoutes />
+              {/* <AuthenticatedRoute path={ROUTES.CONTACT} component={Contact} />
+              <AuthenticatedRoute path={ROUTES.README} component={Readme} /> */}
             </Switch>
           </div>
         </div>
