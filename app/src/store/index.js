@@ -21,7 +21,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["i18n", "form"]
+  blacklist: ["i18n", "form", "alerts"]
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
