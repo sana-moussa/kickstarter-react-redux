@@ -24,7 +24,6 @@ class LoginForm extends React.Component {
 
     return (
       <div className="authentication-form">
-        <div className="header">{this.props.error}</div>
         <form onSubmit={handleSubmit}>
           <fieldset>
             <legend>
@@ -68,8 +67,7 @@ class LoginForm extends React.Component {
 
 LoginForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  loggingIn: PropTypes.bool,
-  error: PropTypes.object
+  loggingIn: PropTypes.bool
 };
 
 export default reduxForm({ form: "login-form", validate })(LoginForm);

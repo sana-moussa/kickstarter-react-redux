@@ -30,7 +30,6 @@ class RegistrationForm extends React.Component {
 
     return (
       <div className="registration-form">
-        <div className="header">{this.props.error}</div>
         <form onSubmit={handleSubmit}>
           <fieldset>
             <legend>
@@ -81,8 +80,7 @@ class RegistrationForm extends React.Component {
 
 RegistrationForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  isRegistering: PropTypes.bool,
-  error: PropTypes.object
+  isRegistering: PropTypes.bool
 };
 
 export default reduxForm({ form: "registration-form", validate })(
