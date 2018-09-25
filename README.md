@@ -32,4 +32,4 @@
 
 ### Credits
 
-I would like to thank Christoph Grabenstein for being with a grate help in making up this code.
+I would like to thank Christoph Grabenstein for being a great help in making up this code.
